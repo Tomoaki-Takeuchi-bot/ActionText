@@ -1,11 +1,13 @@
 # Rails6 Action Text
 ### このアプリはRails6の新機能であるActiontextの動作検証を行った簡易アプリです。
 
-![ActionText](https://drive.google.com/file/d/1lgELTCoXyOWkiQZwpetknE-BQuhrrEFP/view?usp=sharing.ActionText.png)
+<img width="1680" alt="スクリーンショット 2020-06-24 21 28 17" src="https://user-images.githubusercontent.com/61924934/85683939-a25f5700-b708-11ea-95f0-1e27ec9f81a5.png">
 
 - 作成目的
+  - Rails6の新機能ActionTextの確認
   - Docke,Docker-composeでの安定的な環境構築（Dockerfile,docker-compose.yml,qs )
-- アプリ追加仕様
+
+- アプリ検証仕様
   - ActionText
   - validation (title文字数、content文字数、添付ファイルサイズ、添付ファイル数)
   - validation error(日本語化)
@@ -17,9 +19,10 @@
 - ActionText
 
 
-<インストール手順>
 ---
-### action text のインストール & migrate
+### <インストール手順>
+---
+### 1: action text のインストール & migrate
 
 ```
 docker-compose exec web ./bin/rails action_text:install
@@ -27,7 +30,7 @@ docker-compose exec web ./bin/rails db:migrate
 # データ反映はdb schemaを確認してください。
 ```
 
-#### Gemfile修正, bundle, 再起動
+#### 2: Gemfile修正, bundle, 再起動
 
 ```
 gem 'image_processing', '~> 1.2'
@@ -39,7 +42,7 @@ docker-compose up -b web db
 # 入れない場合他のコンテナも起動してしまいます。
 ```
 
-### scaffold post & has_rich_textをモデルに追加
+### 3: scaffold post & has_rich_textをモデルに追加
 
 ```
 docker-compose exec web ./bin/rails generate scaffold post title:string
@@ -51,7 +54,7 @@ class Post < ApplicationRecord
 end
 ```
 
-### paramsのコンテント許可を追加
+### 4: paramsのコンテント許可を追加
 
 ```
 # app controllers -> posts_controller.rb
@@ -61,7 +64,7 @@ def post_params
 end
 ```
 
-### コンテントフィールドの追加
+### 5: コンテントフィールドの追加
 
 ```
 # app views posts _form.html.erb
@@ -70,15 +73,15 @@ end
 + </div>
 ```
 
-### showにコンテント追加
+### 6: showにコンテント追加
 
 ```
 app views posts show.html.erb
 + <%= @post.content %>
 ```
 
-### varidationでtitleの文字数、記入漏れを制限
-#### *詳細コードはmodel -> post.rbを参照願います。
+### 7: varidationでtitleの文字数、記入漏れを制限
+#### (*詳細コードはmodel -> post.rbを参照願います。)
 ```
 #  必要に応じて下記のコードを変更しtitleの長さや、添付ファイルの制限を変更してください。
 validates :title, length: { maximum: 40 }, presence: true 
@@ -90,8 +93,8 @@ validates :title, length: { maximum: 40 }, presence: true
 
 ```
 
-### エラーメッセージの日本語化
-#### *railsガイドからの記述に沿ってymlファイルを追加しています。
+### 8: エラーメッセージの日本語化
+#### (*railsガイドからの記述に沿ってymlファイルを追加しています。)
 
 ```
 # config -> local.rb(make new file)
