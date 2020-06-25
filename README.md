@@ -145,7 +145,5 @@ ja:
 ```
 
 <<御注意事項 *Git cloneされる方へ>>
-・qsスプリクトにはsprigin,solagraph,redis,chromeが含まれております。
-上記不要な際は修正の上ご使用下さい。
-・Gemfile更新でinitializeが必要な際は、`docker-compose down` した後
-`docker-compose up -d web db` で起動して下さい。
+- スプリクトにはsprigin,solagraph,redis,chromeが含まれております。
+- Gemfile更新でinitializeが必要、`docker-compose down` した後 `docker-compose up -d web db` で起動して下さい。
