@@ -146,4 +146,5 @@ ja:
 
 <<御注意事項 *Git cloneされる方へ>>
 - スプリクトにはsprigin,solagraph,redis,chromeが含まれております。
-- Gemfile更新でinitializeが必要、`docker-compose down` した後 `docker-compose up -d web db` で起動して下さい。
+- Gemfile更新でinitializeが必要、`docker-compose down` した後
+`docker-compose up -d web db` で起動して下さい。
