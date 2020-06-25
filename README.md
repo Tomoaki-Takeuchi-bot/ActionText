@@ -1,7 +1,7 @@
 # Rails6 Action Text
 ### このアプリはRails6の新機能であるActiontextの動作検証を行った簡易アプリです。
 
-![ActionText](https://drive.google.com/file/d/1lgELTCoXyOWkiQZwpetknE-BQuhrrEFP/view?usp=sharing)
+![ActionText](https://drive.google.com/file/d/1lgELTCoXyOWkiQZwpetknE-BQuhrrEFP/view?usp=sharing.ActionText.png)
 
 - 作成目的
   - Docke,Docker-composeでの安定的な環境構築（Dockerfile,docker-compose.yml,qs )
@@ -78,7 +78,7 @@ app views posts show.html.erb
 ```
 
 ### varidationでtitleの文字数、記入漏れを制限
-### 詳細コードはmodel -> post.rbを参照願います。
+#### *詳細コードはmodel -> post.rbを参照願います。
 ```
 #  必要に応じて下記のコードを変更しtitleの長さや、添付ファイルの制限を変更してください。
 validates :title, length: { maximum: 40 }, presence: true 
@@ -91,7 +91,7 @@ validates :title, length: { maximum: 40 }, presence: true
 ```
 
 ### エラーメッセージの日本語化
-### railsガイドからの記述に沿ってymlファイルを追加しています。
+#### *railsガイドからの記述に沿ってymlファイルを追加しています。
 
 ```
 # config -> local.rb(make new file)
