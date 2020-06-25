@@ -1,14 +1,14 @@
 # Rails6 Action Text
-### このアプリはRails6の新機能であるActiontextの動作検証を行った簡易アプリです。
+### このアプリはRails6の新機能であるActionTextの動作検証を行った簡易アプリです。
 
 <img width="1680" alt="スクリーンショット 2020-06-24 21 28 17" src="https://user-images.githubusercontent.com/61924934/85683939-a25f5700-b708-11ea-95f0-1e27ec9f81a5.png">
 
 - 作成目的
   - Rails6の新機能ActionTextの確認
-  - Docke,Docker-composeでの安定的な環境構築（Dockerfile,docker-compose.yml,qs )
+  - Docker,Docker-composeでの安定的な環境構築（Dockerfile,docker-compose.yml,qs )
 
 - アプリ検証仕様
-  - ActionText
+  - ActionText (WISIWYG)
   - validation (title文字数、content文字数、添付ファイルサイズ、添付ファイル数)
   - validation error(日本語化)
 
@@ -20,7 +20,20 @@
 
 
 ---
-### <インストール手順>
+### <作成手順>
+---
+
+### 初期リポジトリ内容
+- .gitignore 
+- .Dockerfile
+- Gemfile
+- README.md
+- database.yml
+- docker-compose.yml
+- qs
+
+スクリプトの実行 `./qs setup`
+
 ---
 ### 1: action text のインストール & migrate
 
@@ -81,7 +94,7 @@ app views posts show.html.erb
 ```
 
 ### 7: varidationでtitleの文字数、記入漏れを制限
-#### (*詳細コードはmodel -> post.rbを参照願います。)
+#### *(詳細コードはmodel -> post.rbを参照願います。)
 ```
 #  必要に応じて下記のコードを変更しtitleの長さや、添付ファイルの制限を変更してください。
 validates :title, length: { maximum: 40 }, presence: true 
@@ -94,7 +107,7 @@ validates :title, length: { maximum: 40 }, presence: true
 ```
 
 ### 8: エラーメッセージの日本語化
-#### (*railsガイドからの記述に沿ってymlファイルを追加しています。)
+#### *(railsガイドからの記述に沿ってymlファイルを追加しています。)
 
 ```
 # config -> local.rb(make new file)
@@ -131,3 +144,8 @@ ja:
         content: コンテンツ
 ```
 
+<<御注意事項 *Git cloneされる方へ>>
+・qsスプリクトにはsprigin,solagraph,redis,chromeが含まれております。
+上記不要な際は修正の上ご使用下さい。
+・Gemfile更新でinitializeが必要な際は、`docker-compose down` した後
+`docker-compose up -d web db` で起動して下さい。
