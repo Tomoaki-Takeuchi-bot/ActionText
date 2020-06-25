@@ -43,7 +43,7 @@ docker-compose exec web ./bin/rails db:migrate
 # データ反映はdb schemaを確認してください。
 ```
 
-#### 2: Gemfile修正, bundle, 再起動
+### 2: Gemfile修正, bundle, 再起動
 
 ```
 gem 'image_processing', '~> 1.2'
@@ -143,8 +143,9 @@ ja:
         title: タイトル
         content: コンテンツ
 ```
+---
 
-<<御注意事項 *Git cloneされる方へ>>
+### <<御注意事項 *Git cloneされる方へ>>
 - スプリクトにはsprigin,solagraph,redis,chromeが含まれております。
 - Gemfile更新でinitializeが必要、`docker-compose down` した後
 `docker-compose up -d web db` で起動して下さい。
