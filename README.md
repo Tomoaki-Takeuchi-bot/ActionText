@@ -1,6 +1,8 @@
 # Rails6 Action Text
+### このアプリはRails6の新機能であるActiontextの動作検証を行った簡易アプリです。
 
-## このアプリはRails6の新機能であるActiontextの動作検証を行った簡易アプリです。
+![ActionText](https://drive.google.com/file/d/1lgELTCoXyOWkiQZwpetknE-BQuhrrEFP/view?usp=sharing)
+
 - 作成目的
   - Docke,Docker-composeでの安定的な環境構築（Dockerfile,docker-compose.yml,qs )
 - アプリ追加仕様
@@ -8,13 +10,14 @@
   - validation (title文字数、content文字数、添付ファイルサイズ、添付ファイル数)
   - validation error(日本語化)
 
-## 仕様
+### 仕様
 - Rails: 6.0.3.2
-- Ruby 2.6.6
+- Ruby: 2.6.6
 - Docker/Docker-compose
 - ActionText
 
-<手順>
+
+<インストール手順>
 ---
 ### action text のインストール & migrate
 
